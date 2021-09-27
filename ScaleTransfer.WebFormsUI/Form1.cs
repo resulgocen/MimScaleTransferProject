@@ -48,7 +48,7 @@ namespace ScaleTransfer.WebFormsUI
             DialogResult dialogResult = openFileDialog.ShowDialog();
             if (dialogResult != DialogResult.OK) return;
             tbxExcelPath.Text = openFileDialog.FileName;
-            lblStatus.Text = "Excel dosyasından veriler getiriliyor. Lütfen bekleyiniz...";
+            lblStatus.Text = "Excel dosyasından veriler getiriliyor. Lütfen bekleyin...";
             dgwScale.DataSource = await Task.Run(()=>_yevmiyeService.GetAll(openFileDialog.FileName));
             lblStatus.Text = "Hazır";
 
